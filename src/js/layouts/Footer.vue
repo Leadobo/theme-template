@@ -1,12 +1,19 @@
 <template>
   <footer>
-    This footer is able to pull props from the $page!
-    {{ $page.props.team.name }}
+    <section class="container">
+      <ul>
+        <li>© {{ new Date().getFullYear() }} {{ brand.name }}</li>
+        <li><a href="/ccpa">California Privacy Rights</a></li>
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Use</a></li>
+      </ul>
+    </section>
   </footer>
 </template>
 
-<script>
-export default {
-  name: "Footer",
-}
+<script setup>
+defineProps({
+  team: Object,
+  brand: Object,
+})
 </script>
